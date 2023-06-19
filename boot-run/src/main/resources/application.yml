@@ -1,0 +1,35 @@
+server:
+  port: 8090
+  servlet:
+    context-path: /api
+
+spring:
+  application:
+    name: customer-ms
+  h2:
+    console:
+      enabled: true
+
+  datasource:
+    url: jdbc:h2:mem:customers
+    username: root
+    password: password_root
+    driverClassName: org.h2.Driver
+
+  jpa:
+    database-platform: org.hibernate.dialect.H2Dialect
+    show-sql: true
+    generate-ddl: false
+    hibernate:
+      ddl-auto: none
+
+  flyway:
+    enabled: true
+    baseline-version: 1
+    locations: classpath:db/migration
+    sql-migration-suffixes: .sql
+    baseline-on-migrate: true
+    sql-migration-prefix: v
+
+
+
