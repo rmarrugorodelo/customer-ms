@@ -9,6 +9,7 @@ public class Customer {
     @With
     Long id;
     IdentificationType identificationType;
+    @With
     Integer identificationNumber;
     String firstName;
     String secondName;
